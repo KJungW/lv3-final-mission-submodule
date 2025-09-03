@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: lv2-final-mission
+  datasource:
+    url: jdbc:mysql://10.0.100.102:3306/prod_db
+    username: user
+    password: user123
+
+  sql:
+    init:
+      data-locations: classpath:/init_data.sql
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    defer-datasource-initialization: true
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        default_batch_fetch_size: 50
+
+security:
+  jwt:
+    token:
+      secret-key: emN2cGdvcHdsZXcyNjIzNDEwYWthQCEjYXNkL3ZjeGtsa2x2eGNremxqMjAxNHNpZGchQFRTRE9TREFGS0x3cWxrZWprYWZhcw==
+      expire-length: 3600000
+
+client:
+  random-name:
+    secret-key: 5790f30292c74d2b8511d5fd75beb018
+    base-url: https://randommer.io
+    generate_url: /api/Name
